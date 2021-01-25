@@ -1,4 +1,4 @@
-# My Solutions to the Problems in [LeetCode](https://leetcode.com/)
+# My Solutions to the Problems on [LeetCode](https://leetcode.com/)
 
 ## Commit.Message.Pattern
 * Difficulty - ClassName - Action - Type - Detail
