@@ -1,7 +1,7 @@
 # My Solutions to the Problems on [LeetCode](https://leetcode.com/)
 
 ## Commit.Message.Pattern
-* Difficulty - ClassName - Action - Type - Detail
+* Difficulty - Problem - Action - Type - Detail
   * Detail is optional
 * Examples
   * Easy - TwoSum - Add - Solution
