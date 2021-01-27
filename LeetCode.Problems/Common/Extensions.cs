@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using FluentAssertions.Collections;
 
 namespace LeetCode.Problems.Common
 {
@@ -37,6 +38,12 @@ namespace LeetCode.Problems.Common
             }
 
             return firstNode == null && secondNode == null;
+        }
+
+        public static void BeEqualTo<T>(this GenericCollectionAssertions<T> set, IEnumerable<T> other,
+            string testCase = null)
+        {
+            set.BeEquivalentTo(other, options => options.WithStrictOrdering(), testCase);
         }
     }
 }
