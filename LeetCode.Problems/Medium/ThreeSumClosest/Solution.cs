@@ -2,6 +2,9 @@
 
 namespace LeetCode.Problems.Medium.ThreeSumClosest
 {
+    /// <summary>
+    /// Problem: https://leetcode.com/problems/3sum-closest/
+    /// </summary>
     public class Solution
     {
         public int ThreeSumClosest(int[] nums, int target)
