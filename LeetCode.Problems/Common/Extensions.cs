@@ -40,7 +40,9 @@ namespace LeetCode.Problems.Common
             return firstNode == null && secondNode == null;
         }
 
-        public static void BeEqualTo<T>(this GenericCollectionAssertions<T> set, IEnumerable<T> other,
+        public static void BeEqualTo<T>(
+            this GenericCollectionAssertions<T> set, 
+            IEnumerable<T> other,
             string testCase = null)
         {
             set.BeEquivalentTo(other, options => options.WithStrictOrdering(), testCase);
