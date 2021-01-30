@@ -2,6 +2,9 @@
 
 namespace LeetCode.Problems.Medium.RemoveNthNodeFromEndOfList
 {
+    /// <summary>
+    /// Problem: https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+    /// </summary>
     public class SolutionWithFastAndSlow
     {
         public ListNode RemoveNthFromEnd(ListNode head, int n)

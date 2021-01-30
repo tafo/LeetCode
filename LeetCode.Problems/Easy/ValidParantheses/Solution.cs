@@ -2,6 +2,9 @@
 
 namespace LeetCode.Problems.Easy.ValidParantheses
 {
+    /// <summary>
+    /// Problem: https://leetcode.com/problems/valid-parentheses/
+    /// </summary>
     public class Solution
     {
         public bool IsValid(string s)
