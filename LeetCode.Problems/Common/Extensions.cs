@@ -47,5 +47,18 @@ namespace LeetCode.Problems.Common
         {
             set.BeEquivalentTo(other, options => options.WithStrictOrdering(), testCase);
         }
+
+        public static IEnumerable<int> ToList(this ListNode node)
+        {
+            if (node == null) return null;
+            var output = new List<int>();
+            while (node != null)
+            {
+                output.Add(node.val);
+                node = node.next;
+            }
+
+            return output;
+        }
     }
 }
