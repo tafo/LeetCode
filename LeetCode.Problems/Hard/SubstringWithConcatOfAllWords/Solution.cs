@@ -2,6 +2,9 @@
 
 namespace LeetCode.Problems.Hard.SubstringWithConcatOfAllWords
 {
+    /// <summary>
+    /// Problem: https://leetcode.com/problems/substring-with-concatenation-of-all-words/
+    /// </summary>
     public class Solution
     {
         public IList<int> FindSubstring(string s, string[] words)
