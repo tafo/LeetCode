@@ -1,5 +1,8 @@
 ﻿namespace LeetCode.Problems.Easy.RemoveDuplicates
 {
+    /// <summary>
+    /// https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+    /// </summary>
     public class Solution
     {
         public int RemoveDuplicates(int[] nums)
