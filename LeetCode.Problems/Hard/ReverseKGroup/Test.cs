@@ -29,6 +29,20 @@ namespace LeetCode.Problems.Hard.ReverseKGroup
             _outputHelper.WriteLine($"Duration = {timer.ElapsedTicks}");
         }
 
+
+        [Theory]
+        [MemberData(nameof(InputAndOutput))]
+        public void CheckAnother(ListNode node, int k, IEnumerable<int> expectedOutput)
+        {
+            var timer = Stopwatch.StartNew();
+            var solution = new SolutionAnother();
+            timer.Start();
+            var actualOutput = solution.ReverseKGroup(node, k);
+            timer.Stop();
+            actualOutput.ToList().Should().BeEqualTo(expectedOutput);
+            _outputHelper.WriteLine($"Duration = {timer.ElapsedTicks}");
+        }
+
         public static IEnumerable<object[]> InputAndOutput => new List<object[]>
         {
             new object[]
