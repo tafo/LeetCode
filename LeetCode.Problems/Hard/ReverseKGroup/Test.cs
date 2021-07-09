@@ -5,7 +5,7 @@ using LeetCode.Problems.Common;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace LeetCode.Problems.Medium.SwapNodesInPairs
+namespace LeetCode.Problems.Hard.ReverseKGroup
 {
     public class Test
     {
@@ -18,13 +18,14 @@ namespace LeetCode.Problems.Medium.SwapNodesInPairs
 
         [Theory]
         [MemberData(nameof(InputAndOutput))]
-        public void Check(ListNode head, ListNode expectedHead)
+        public void Check(ListNode node, int k, IEnumerable<int> expectedOutput)
         {
             var timer = Stopwatch.StartNew();
             var solution = new Solution();
             timer.Start();
-            var actualHead = solution.SwapPairs(head);
-            actualHead.IsEqualTo(expectedHead).Should().BeTrue();
+            var actualOutput = solution.ReverseKGroup(node, k);
+            timer.Stop();
+            actualOutput.ToList().Should().BeEqualTo(expectedOutput);
             _outputHelper.WriteLine($"Duration = {timer.ElapsedTicks}");
         }
 
@@ -32,14 +33,29 @@ namespace LeetCode.Problems.Medium.SwapNodesInPairs
         {
             new object[]
             {
-                new[] {1,2,3,4}.ToListNode(),
-                new[] {2,1,4,3}.ToListNode()
+                new[] {1, 2, 3, 4, 5}.ToListNode(),
+                3,
+                new List<int> {3, 2, 1, 4, 5}
+            },
+            new object[]
+            {
+                new[] {1, 2, 3, 4, 5}.ToListNode(),
+                1,
+                new List<int> {1, 2, 3, 4, 5}
             },
             new object[]
             {
                 new[] {1}.ToListNode(),
-                new[] {1}.ToListNode()
-            }
+                1,
+                new List<int> {1}
+            },
+
+            new object[]
+            {
+                new[] {1, 2}.ToListNode(),
+                2,
+                new List<int> {2, 1}
+            },
         };
     }
 }
