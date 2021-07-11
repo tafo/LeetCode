@@ -1,6 +1,4 @@
-﻿using Microsoft.Diagnostics.Tracing.Parsers.Kernel;
-
-namespace LeetCode.Problems.Easy.StrStr
+﻿namespace LeetCode.Problems.Easy.StrStr
 {
     public class Solution
     {
@@ -23,8 +21,8 @@ namespace LeetCode.Problems.Easy.StrStr
                     j = 0;
                 }
             }
-            
-            return j == needle.Length ? i -j :  -1;
+
+            return j == needle.Length ? i - j : -1;
         }
     }
 }
