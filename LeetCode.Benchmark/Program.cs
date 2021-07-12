@@ -8,7 +8,7 @@ namespace LeetCode.Benchmark
         public static void Main()
         {
             Console.ReadLine();
-            BenchmarkRunner.Run(typeof(Problems.Medium.RemoveNthNodeFromEndOfList.Benchmark));
+            BenchmarkRunner.Run(typeof(Problems.Easy.IsIsomorphic.Benchmark));
             Console.ReadLine();
         }
     }
