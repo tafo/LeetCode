@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using BenchmarkDotNet.Attributes;
 
 namespace LeetCode.Problems.Easy.IsIsomorphic
@@ -30,16 +29,6 @@ namespace LeetCode.Problems.Easy.IsIsomorphic
         public void SolutionBest()
         {
             var solution = new SolutionBest();
-            foreach (var (s, t) in Data)
-            {
-                solution.IsIsomorphic(s, t);
-            }
-        }
-
-        [Benchmark]
-        public void Solution()
-        {
-            var solution = new Solution();
             foreach (var (s, t) in Data)
             {
                 solution.IsIsomorphic(s, t);

@@ -17,19 +17,6 @@ namespace LeetCode.Problems.Easy.IsIsomorphic
 
         [Theory]
         [MemberData(nameof(InputAndOutput))]
-        public void Check(string s, string t, bool output)
-        {
-            var timer = Stopwatch.StartNew();
-            var solution = new Solution();
-            timer.Start();
-            var actualOutput = solution.IsIsomorphic(s, t);
-            timer.Stop();
-            actualOutput.Should().Be(output);
-            _outputHelper.WriteLine($"Duration = {timer.ElapsedTicks}");
-        }
-
-        [Theory]
-        [MemberData(nameof(InputAndOutput))]
         public void CheckAnother(string s, string t, bool output)
         {
             var timer = Stopwatch.StartNew();

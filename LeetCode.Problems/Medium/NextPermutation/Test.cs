@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using FluentAssertions;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace LeetCode.Problems.Medium.Divide
+namespace LeetCode.Problems.Medium.NextPermutation
 {
     public class Test
     {
@@ -17,14 +18,14 @@ namespace LeetCode.Problems.Medium.Divide
 
         [Theory]
         [MemberData(nameof(InputAndOutput))]
-        public void Check(int dividend, int divisor, int expectedOutput)
+        public void Check(int[] nums, int[] expectedNums)
         {
             var timer = Stopwatch.StartNew();
             var solution = new Solution();
             timer.Start();
-            var actualOutput = solution.Divide(dividend, divisor);
+            solution.NextPermutation(nums);
             timer.Stop();
-            actualOutput.Should().Be(expectedOutput);
+            nums.SequenceEqual(expectedNums).Should().BeTrue();
             _outputHelper.WriteLine($"Duration = {timer.ElapsedTicks}");
         }
 
@@ -32,51 +33,33 @@ namespace LeetCode.Problems.Medium.Divide
         {
             new object[]
             {
-                16, 2, 8
+                new[] {1, 2, 3, 4, 5},
+                new[] {1, 2, 3, 5, 4},
             },
             new object[]
             {
-                10, 3, 3
+                new[] {1, 2, 3, 5, 4},
+                new[] {1, 2, 4, 3, 5},
             },
             new object[]
             {
-                10, -3, -3
+                new[] {1, 2, 4, 3, 5},
+                new[] {1, 2, 4, 5, 3},
             },
             new object[]
             {
-                -10, 3, -3
+                new[] {1, 2, 4, 5, 3},
+                new[] {1, 2, 5, 3, 4},
             },
             new object[]
             {
-                -10, -3, 3
+                new[] {1, 2, 9, 5, 4},
+                new[] {1, 4, 2, 5, 9},
             },
             new object[]
             {
-                1, 1, 1
-            },
-            new object[]
-            {
-                1, -1, -1
-            },
-            new object[]
-            {
-                -1, 1, -1
-            },
-            new object[]
-            {
-                -1, -1, 1
-            },
-            new object[]
-            {
-                -2147483648, -1, 2147483647
-            },
-            new object[]
-            {
-                -2147483648, 1, -2147483648
-            },
-            new object[]
-            {
-                -2147483648, 2, -1073741824
+                new[] {2, 3, 1},
+                new[] {3, 1, 2},
             },
         };
     }
