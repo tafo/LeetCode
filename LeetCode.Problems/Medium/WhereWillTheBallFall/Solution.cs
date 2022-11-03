@@ -1,10 +1,5 @@
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using FluentAssertions;
 using LeetCode.Problems.Common;
-using Xunit;
-using Xunit.Abstractions;
 
 namespace LeetCode.Problems.Medium.WhereWillTheBallFall;
 
@@ -95,57 +90,5 @@ public class Solution
     }
 }
 
-public class Test
-{
-    private readonly ITestOutputHelper _outputHelper;
-
-    public Test(ITestOutputHelper outputHelper)
-    {
-        _outputHelper = outputHelper;
-    }
-
-    [Theory]
-    [MemberData(nameof(InputAndOutput))]
-    public void Check(int[][] input, int[] output)
-    {
-        var timer = Stopwatch.StartNew();
-        timer.Start();
-        var solution = new Solution();
-        var result = solution.FindBall(input);
-        timer.Stop();
-        result.SequenceEqual(output).Should().BeTrue();
-        _outputHelper.WriteLine($"{timer.ElapsedTicks}");
-    }
-
-    public static IEnumerable<object[]> InputAndOutput()
-    {
-        return new List<object[]>
-        {
-            new object[]
-            {
-                new[]
-                {
-                    new[] { 1, 1, 1, -1, -1 },
-                    new[] { 1, 1, 1, -1, -1 },
-                    new[] { -1, -1, -1, 1, 1 },
-                    new[] { 1, 1, 1, 1, -1 },
-                    new[] { -1, -1, -1, -1, -1 }
-                },
-                new[] { 1, -1, -1, -1, -1 }
-            },
-            new object[]
-            {
-                new[]
-                {
-                    new[] { 1, 1, 1, 1, 1, 1 },
-                    new[] { -1, -1, -1, -1, -1, -1 },
-                    new[] { 1, 1, 1, 1, 1, 1 },
-                    new[] { -1, -1, -1, -1, -1, -1 },
-                },
-                new[] { -1, -1, -1, -1, -1, -1 }
-            }
-        };
-    }
-}
 // If CurrentDirection is Right, it can not be Left in the following cell
 // If CurrentDirection is Left, it can not be Right in the following cell
