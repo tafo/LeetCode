@@ -19,7 +19,7 @@ public class Test
     [MemberData(nameof(InputAndOutput))]
     public void Check(string input, string expectedOutput)
     {
-        var solution = new AnotherSolution();
+        var solution = new Solution();
         var timer = Stopwatch.StartNew();
         var actualOutput = solution.MakeGood(input);
         timer.Stop();
